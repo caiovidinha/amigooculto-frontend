@@ -24,7 +24,7 @@ export const Search = ({ id }: Props) => {
     
     return (
         
-        <section className="bg-gray-900 p-5 rounded-lg mb-5">
+        <section className="overflow-y-hidden">
             {!results && <SearchForm 
             onSearchButton={handleSearchButton}
             loading={loading} />}

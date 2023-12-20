@@ -19,7 +19,7 @@ export const SearchForm = ({ onSearchButton }: Props) => {
             className="w-full p-3 bg-white text-black text-center text-4xl md:text-3xl outline-none rounded-lg"
             autoFocus
             />
-            <button className="w-full p-3 mt-3 rounded-lg text-white text-2xl bg-gray-600 active:bg-gray-700 select-none"
+            <button className="w-full p-3 mt-3 rounded-lg text-white text-2xl bg-gray-600 hover:bg-gray-500 active:bg-gray-700 select-none"
             >Acessar</button>
         </div>
     )

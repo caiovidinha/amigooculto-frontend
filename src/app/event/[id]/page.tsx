@@ -18,7 +18,7 @@ const Page = async ({ params }: Props) => {
 
         <Search id={eventItem.id}/>
 
-        <footer>Criado com carinho por Caio Vidinha :)</footer>
+        <footer className="text-xs">Criado com carinho por Caio Vidinha 😁</footer>
       </main>
     )
   }

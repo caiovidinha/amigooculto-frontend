@@ -20,10 +20,11 @@ const Page = async ({ params }: Props) => {
             
             
         </header>
-        <div className="rounded-3xl shadow-2xl mt-8">
-          <div className="bg-blue-900 p-5 rounded-t-3xl">
+        <div className="rounded-3xl shadow-2xl mt-8 transition-all duration-500">
+          <div className="flex flex-col items-center justify-center bg-blue-900 p-5 rounded-t-3xl">
             <h1 className="text-3xl font-bold">{eventItem.title}</h1>
             <p className="text-sm mb-5">{eventItem.description}</p>
+            <div className="-mb-8 w-10 h-10 bg-blue-900 -bottom-[10%] rotate-45 rounded-md"></div>
           </div>
           <Search id={eventItem.id}/>
         </div>

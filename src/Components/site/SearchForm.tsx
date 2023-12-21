@@ -13,7 +13,7 @@ export const SearchForm = ({ onSearchButton, loading }: Props) => {
 
     return (
         <div>
-            <p className="my-3 text-2xl text-black">Qual o seu código individual?</p>
+            <p className="mb-3 mt-8 text-2xl text-black">Qual o seu código individual?</p>
             <input 
             type="text"
             inputMode="numeric"

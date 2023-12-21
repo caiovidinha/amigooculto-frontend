@@ -14,6 +14,10 @@ const Events = () => {
   
 
   const getEvents = async () => {
+    if(open) {
+      setOpen(false)
+      return}
+    
     const urlParams = new URLSearchParams(window.location.search);
     const tokenParam = urlParams.get('token')
     if(tokenParam) {
@@ -25,15 +29,17 @@ const Events = () => {
 
   return (
     <div>
-      <div 
-        className={ open ? "bg-gray-300 text-gray-700 py-3 px-4 flex flex-row justify-between mx-auto rounded-t-lg" :"bg-gray-300 text-gray-700 py-3 px-4 flex flex-row justify-between mx-auto rounded-lg"}>
-        <h2 className="text-2xl font-semibold p-3">Eventos</h2>
-        <button className="active:bg-gray-400 p-3 rounded-md" onClick={getEvents}><IoIosArrowDown  size={30}/></button>
+      <div
+        onClick={getEvents} 
+        className={ open ? "bg-gray-300 text-gray-700 py-3 px-4 flex flex-row justify-between mx-auto rounded-t-lg" :"bg-gray-300 text-gray-700 py-3 px-4 flex flex-row justify-between mx-auto rounded-lg hover:cursor-pointer"}>
+        <h2 className="text-2xl font-semibold p-3 select-none">Eventos</h2>
+        <button className={open ? "active:bg-gray-400 p-3 rounded-md rotate-180 duration-500 transition-all" : "active:bg-gray-400 p-3 rounded-md duration-500 transition-all"} 
+        onClick={getEvents}><IoIosArrowDown size={30}/></button>
       </div>
-      <div className={open ? "rounded-b-lg bg-gray-300 grid grid-cols-2 md:grid-cols-3 transition-all duration-500 p-12" : "rounded-b-lg bg-gray-300 grid grid-cols-2 md:grid-cols-3 transition-all duration-500"}> 
+      <div className={open ? "rounded-b-lg bg-gray-300 grid grid-cols-2 md:grid-cols-3 transition-all duration-500 py-12 px-4 md:p-12 gap-4" : "rounded-b-lg bg-gray-300 hidden grid-cols-2 md:grid-cols-3 transition-all duration-500"}> 
       {eventList.map((event, index) => (
-        <div className="rounded-lg bg-gray-600 px-3 py-20 hover:cursor-pointer hover:bg-gray-500"><h1 className="font-bold text-2xl">{event.title ? event.title : ''}</h1>
-            <h2>{event.description ? event.description : ''}</h2>
+        <div className="rounded-lg bg-gray-600 md:px-3 p-2 md:py-20 hover:cursor-pointer hover:bg-gray-500"><h1 className="font-bold md:text-2xl">{event.title ? event.title : ''}</h1>
+            <h2 className="text-xs md:text-md">{event.description ? event.description : ''}</h2>
         </div>
       ))} </div>
     </div>
